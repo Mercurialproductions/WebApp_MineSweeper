@@ -48,13 +48,50 @@ const generateBombBoard = function(numberOfRows,numberOfColumns,numberOfBombs) {
   }
 
 
+//Function that checks the number of bombs placed around the flipped tile.
+//@param generateBomb
+//@param rowIndex
+//@param columnIndex
+const getNumberOfNeighborBombs = function(bombBoard,rowIndex,columnIndex){
+
+const neighborOffsets = [[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]];
+
+const numberOfRows = bombBoard.length;
+
+const numberOfColumns = bombBoard[0].length;
+
+var numberOfBombs = 0;
+
+neigborOffsets.forEach(offSet => {
+
+const neighborRowIndex = rowIndex + offSet[0];
+
+const neighborColumnIndex = columnIndex + offSet[1];
+
+if((neighborRowIndex >= 0 && neighborRowIndex < numberOfRows) && (neighborColumnIndex >= 0 && neighborColumnIndex < numberOfColumns)) {
+
+
+
+}
+
+})
+
+}
+
+
 var numberOfBombsPlaced;
 
 for(numberOfBombsPlaced = 0;numberOfBombsPlaced < numberOfBombs;numberOfBombsPlaced++) {
 
 var randomRowIndex = Math.floor(Math.random() * numberOfRows);
 var randomColumnIndex = Math.floor(Math.random() * numberOfColumns);
+if(board[randomRowIndex][randomColumnIndex] === null && board[randomRowIndex][randomColumnIndex] != 'B') {
 board[randomRowIndex][randomColumnIndex] = 'B';
+} else {
+
+numberOfBombsPlaced--;
+
+}
 //need to add code that check if space allready has a bomb before placing it.
 }
 
